@@ -10,7 +10,8 @@ public class ContactDb : DbContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<Contact>().HasData(
-            new Contact { 
+            new Contact {
+                Id = 1,
                 FirstName = "Ankita", 
                 LastName="Lokhande", 
                 Company = "AECC Food Mart",
@@ -23,6 +24,7 @@ public class ContactDb : DbContext
             },
             new Contact
             {
+                Id = 2,
                 FirstName = "Rod",
                 LastName = "Anthony",
                 Company = "Family Snacks LLC",
