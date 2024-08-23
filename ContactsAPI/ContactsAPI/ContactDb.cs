@@ -13,6 +13,7 @@ public class ContactDb : DbContext
             new Contact {
                 Id = 1,
                 FirstName = "Ankita", 
+                MiddleName = "Shree",
                 LastName="Lokhande", 
                 Company = "AECC Food Mart",
                 Website = "www.aeccfoodmart.com",
@@ -34,6 +35,46 @@ public class ContactDb : DbContext
                 Email = "supportadmissions@familysnacks.com",
                 AddressLine1 = "645 Winchester Road",
                 AddressLine2 = "New Market 4567, Alabama"
+            },
+            new Contact
+            {
+                Id = 3,
+                FirstName = "Robert",
+                LastName = "Timothy",
+                Company = "Delicious Foods",
+                Website = "www.diliciousfoods.com",
+                Title = "Restaurant Manager",
+                Phone = "2568943906",
+                Email = "restro_manager@diliciousfoods.com",
+                AddressLine1 = "89 Oxford Road",
+                AddressLine2 = "New Market 4567, Alabama"
+            },
+            new Contact
+            {
+                Id = 4,
+                FirstName = "Sharon",
+                LastName = "Stone",
+                Company = "Delicious Foods",
+                Website = "www.diliciousfoods.com",
+                Title = "Restaurant Owner",
+                Phone = "2568462345",
+                Email = "owner@diliciousfoods.com",
+                AddressLine1 = "1245 Oxford Road",
+                AddressLine2 = "New Market 4567, Alabama"
+            },
+            new Contact
+            {
+                Id = 5,
+                FirstName = "William",
+                MiddleName = "Bradley",
+                LastName = "Pitt",
+                Company = "Marvel Studios",
+                Website = "www.marvelstudios.com",
+                Title = "Chief Executive Officer",
+                Phone = "9368472769",
+                Email = "brad.pitt@marvelstudios.com",
+                AddressLine1 = "1245 Stars Drive",
+                AddressLine2 = "Hollywood 9883, California"
             }
         );
     }
