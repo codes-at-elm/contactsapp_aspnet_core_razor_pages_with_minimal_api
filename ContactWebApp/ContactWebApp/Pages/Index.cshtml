@@ -15,6 +15,7 @@
                 <th>Title</th>
                 <th>Email</th>
                 <th>More Info</th>
+                <th>Manage</th>
             </tr>
         </thead>
         <tbody>
@@ -27,7 +28,13 @@
                     <td>@contact.Company</td>
                     <td>@contact.Title</td>
                     <td>@contact.Email</td>
-                    <td><a class="nav-link text-dark btn-info" asp-page="Detail" asp-route-id="@contact.Id" >View More Info</a></td>
+                    <td><a asp-page="Detail" asp-route-id="@contact.Id" class="btn btn-info mx-2">View More Info</a></td>
+                    <td class="text-center">
+                        <div style="text-align:center">
+                            <a asp-page="Edit" asp-route-id="@contact.Id" class="btn btn-primary mx-2">Edit</a>
+                            <a asp-page="Delete" asp-route-id="@contact.Id" class="btn btn-danger mx-2">Delete</a>
+                        </div>
+                    </td>
                 </tr>
             }
         </tbody>
