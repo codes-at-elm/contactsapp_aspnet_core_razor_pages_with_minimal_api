@@ -1,0 +1,42 @@
+﻿@page
+@model ContactWebApp.Pages.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+<div>
+    @if (Model.ContactModels == null)
+    {
+        <h1 class="text-danger" >Contact Not Found</h1>
+    }
+    else
+    {
+        var fullName = Model.ContactModels.FirstName + (string.IsNullOrEmpty(Model.ContactModels.MiddleName) ? string.Empty : " " + Model.ContactModels.MiddleName) + " " + Model.ContactModels.LastName;
+        <h1>@fullName</h1>
+        <table class="table table-striped">
+            <tr>
+                <th>Company</th>
+                <td>@Model.ContactModels.Company</td>
+            </tr>
+            <tr>
+                <th>Website</th>
+                <td><a href="@Model.ContactModels.Website" class="link-primary" target="_blank">@Model.ContactModels.Website</a></td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>@Model.ContactModels.Title</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>@Model.ContactModels.Phone</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><a href="mailto:@Model.ContactModels.Email" class="link-primary">@Model.ContactModels.Email</a></td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>@Model.ContactModels.AddressLine1<br>@Model.ContactModels.AddressLine2</td>
+            </tr>
+        </table>
+    }
+</div>

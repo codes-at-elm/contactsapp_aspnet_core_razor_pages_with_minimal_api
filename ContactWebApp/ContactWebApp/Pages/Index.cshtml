@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <table class="table table-hover table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Company</th>
+                <th>Title</th>
+                <th>Email</th>
+                <th>More Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var contact in Model.ContactModels)
+            {
+                <tr>
+                    <td>@contact.FirstName</td>
+                    <td>@contact.MiddleName</td>
+                    <td>@contact.LastName</td>
+                    <td>@contact.Company</td>
+                    <td>@contact.Title</td>
+                    <td>@contact.Email</td>
+                    <td><a class="nav-link text-dark btn-info" asp-page="Detail" asp-route-id="@contact.Id" >View More Info</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
