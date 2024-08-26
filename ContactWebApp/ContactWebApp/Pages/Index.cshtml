@@ -4,35 +4,50 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
+<div class="container p-3">
+    <div>
+        <div class="col border-bottom">
+            <h2 class="display-6">My Contacts</h2>            
+        </div>        
+    </div>
+
+    <div class="container pt-4">
+        <div class="row" style="width:80%">
+            @if (TempData["success"] != null)
+            {
+                <h4>@TempData["success"]</h4>
+            }
+            else
+            {
+                <h4>@TempData["failure"]</h4>
+            }
+        </div>
+    </div>
+
     <table class="table table-hover table-bordered table-striped">
         <thead class="table-dark">
             <tr>
-                <th>First Name</th>
-                <th>Middle Name</th>
-                <th>Last Name</th>
+                <th>Name</th>
                 <th>Company</th>
                 <th>Title</th>
                 <th>Email</th>
-                <th>More Info</th>
-                <th>Manage</th>
+                <th class="text-center">More Info</th>
+                <th class="text-center">Manage</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var contact in Model.ContactModels)
             {
                 <tr>
-                    <td>@contact.FirstName</td>
-                    <td>@contact.MiddleName</td>
-                    <td>@contact.LastName</td>
+                    <td>@contact.FullName</td>                    
                     <td>@contact.Company</td>
                     <td>@contact.Title</td>
-                    <td>@contact.Email</td>
-                    <td><a asp-page="Detail" asp-route-id="@contact.Id" class="btn btn-info mx-2">View More Info</a></td>
+                    <td><a href="mailto:@contact.Email" class="link-primary">@contact.Email</a></td>
+                    <td class="text-md-center"><a asp-page="Detail" asp-route-id="@contact.Id" class="btn btn-info mx-2" style="width:135px">View More Info</a></td>
                     <td class="text-center">
                         <div style="text-align:center">
-                            <a asp-page="Edit" asp-route-id="@contact.Id" class="btn btn-primary mx-2">Edit</a>
-                            <a asp-page="Delete" asp-route-id="@contact.Id" class="btn btn-danger mx-2">Delete</a>
+                            <a asp-page="Edit" asp-route-id="@contact.Id" class="btn btn-primary mx-2" style="width:120px;">Edit</a>
+                            <a asp-page="Delete" asp-route-id="@contact.Id" class="btn btn-danger mx-2" style="width:120px;">Delete</a>
                         </div>
                     </td>
                 </tr>

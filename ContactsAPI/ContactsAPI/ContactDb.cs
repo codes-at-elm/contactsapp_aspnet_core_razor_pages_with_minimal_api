@@ -55,10 +55,10 @@ public class ContactDb : DbContext
                 FirstName = "Sharon",
                 LastName = "Stone",
                 Company = "Delicious Foods",
-                Website = "www.diliciousfoods.com",
+                Website = "www.deliciousfoods.com",
                 Title = "Restaurant Owner",
                 Phone = "2568462345",
-                Email = "owner@diliciousfoods.com",
+                Email = "owner@deliciousfoods.com",
                 AddressLine1 = "1245 Oxford Road",
                 AddressLine2 = "New Market 4567, Alabama"
             },

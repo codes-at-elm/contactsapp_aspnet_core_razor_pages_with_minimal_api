@@ -16,6 +16,7 @@ public class ContactModel
 
     [Display(Name = "Last Name")]
     public string? LastName { get; set; }
+    public string FullName { get => FirstName + (string.IsNullOrEmpty(MiddleName) ? "" : " " + MiddleName) + " " + LastName; }  
     public string? Company { get; set; }
     public string? Website { get; set; }
     public string? Title { get; set; }

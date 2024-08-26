@@ -1,0 +1,74 @@
+﻿@page
+@model ContactWebApp.Pages.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@if (Model.ContactModels == null)
+{
+    <h1 class="text-danger">Contact Not Found</h1>
+}
+else
+{
+    <form method="post">
+        <input hidden asp-for="ContactModels.Id" />
+        <div class="border p-3">
+            <div class="row pb-2">
+                <h2 class="display-6 pl-3">Edit Contact</h2>
+                <hr />
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactModels.FirstName" class="form-label fw-bold">First Name</label>
+                <input type="text" asp-for="ContactModels.FirstName" class="form-control">
+                <span asp-validation-for="ContactModels.FirstName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactModels.MiddleName" class="form-label fw-bold">Middle Name</label>
+                <input type="text" asp-for="ContactModels.MiddleName" class="form-control" />
+                <span asp-validation-for="ContactModels.MiddleName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactModels.LastName" class="form-label fw-bold">Last Name</label>
+                <input type="text" asp-for="ContactModels.LastName" class="form-control" />
+                <span asp-validation-for="ContactModels.LastName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactModels.Company" class="form-label fw-bold">Company</label>
+                <input type="text" asp-for="ContactModels.Company" class="form-control" />
+                <span asp-validation-for="ContactModels.Company" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactModels.Website" class="form-label fw-bold">Website</label>
+                <input type="url" asp-for="ContactModels.Website" class="form-control" />
+                <span asp-validation-for="ContactModels.Website" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactModels.Title" class="form-label fw-bold">Title</label>
+                <input type="text" asp-for="ContactModels.Title" class="form-control" />
+                <span asp-validation-for="ContactModels.Title" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactModels.Phone" class="form-label fw-bold">Phone</label>
+                <input type="tel" asp-for="ContactModels.Phone" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+                <span asp-validation-for="ContactModels.Phone" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactModels.Email" class="form-label fw-bold">Email</label>
+                <input type="email" asp-for="ContactModels.Email" class="form-control" />
+                <span asp-validation-for="ContactModels.Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactModels.AddressLine1" class="form-label fw-bold">Address Line One</label>
+                <input type="text" asp-for="ContactModels.AddressLine1" class="form-control" />
+                <span asp-validation-for="ContactModels.AddressLine1" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactModels.AddressLine2" class="form-label fw-bold">Address Line Two</label>
+                <input type="text" asp-for="ContactModels.AddressLine2" class="form-control" />
+                <span asp-validation-for="ContactModels.AddressLine2" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:150px;">Update</button>
+            <a asp-page="Index" class="btn btn-secondary" style="width:150px;">Cancel</a>
+        </div>
+    </form>
+}

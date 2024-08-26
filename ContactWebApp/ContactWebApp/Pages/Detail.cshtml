@@ -6,12 +6,11 @@
 <div>
     @if (Model.ContactModels == null)
     {
-        <h1 class="text-danger" >Contact Not Found</h1>
+        <h1 class="text-danger">Contact Not Found</h1>
     }
     else
-    {
-        var fullName = Model.ContactModels.FirstName + (string.IsNullOrEmpty(Model.ContactModels.MiddleName) ? string.Empty : " " + Model.ContactModels.MiddleName) + " " + Model.ContactModels.LastName;
-        <h1>@fullName</h1>
+    {        
+        <h1>@Model.ContactModels.FullName</h1>
         <table class="table table-striped">
             <tr>
                 <th>Company</th>
