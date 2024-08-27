@@ -22,6 +22,11 @@ namespace ContactWebApp.Pages
 
         public async Task<IActionResult> OnPost()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            } 
+            
             var jsonContent = new StringContent(JsonSerializer.Serialize(ContactModels), Encoding.UTF8, "application/json");
             var httpClient = _httpClientFactory.CreateClient("ContactAPI");
 
