@@ -3,9 +3,9 @@ A web app for managing contacts using ASP.NET Core Razor Pages, ASP.NET Core Min
 
 Technologies
 - .NET 8.0
+- C#
 - ASP.NET Core Razor Pages
 - ASP.NET Core Minimal API
-- C#
 - Bootstrap
 - jQuery
 - jQuery-validation
