@@ -6,7 +6,9 @@
 <div>
     @if (Model.ContactModels == null)
     {
-        <h1 class="text-danger">Contact Not Found</h1>
+        <div class="p-3 bg-danger-subtle text-danger-emphasis border border-danger-subtle rounded-3">
+            <h1 class="text-danger">Contact Not Found</h1>
+        </div>
     }
     else
     {

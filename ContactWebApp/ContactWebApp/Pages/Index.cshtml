@@ -7,24 +7,30 @@
 <div class="container p-3">
     <div>
         <div class="col border-bottom">
-            <h2 class="display-6">My Contacts</h2>            
-        </div>        
+            <h2 class="display-6">My Contacts</h2>
+        </div>
     </div>
 
     <div class="container pt-4">
         <div class="row" style="width:80%">
             @if (TempData["success"] != null)
             {
-                <h4>@TempData["success"]</h4>
+                <div class="p-3 bg-success-subtle text-success-emphasis border border-success-subtle rounded-3">
+                    <h4>@TempData["success"]</h4>
+                </div>
+
             }
-            else
+
+            @if (TempData["failure"] != null)
             {
-                <h4>@TempData["failure"]</h4>
+                <div class="p-3 bg-danger-subtle text-danger-emphasis border border-danger-subtle rounded-3">
+                    <h4>@TempData["failure"]</h4>
+                </div>
             }
         </div>
         <div class="col text-end pb-4">
-            <a asp-page="Add" class="btn btn-primary mx-2 text-end" title="Add New Contact" >
-               <i class="bi bi-plus-square"></i> &nbsp;Add New Contact
+            <a asp-page="Add" class="btn btn-primary mx-2 text-end" title="Add New Contact">
+                <i class="bi bi-plus-square"></i> &nbsp;Add New Contact
             </a>
         </div>
     </div>
@@ -44,7 +50,7 @@
             @foreach (var contact in Model.ContactModels)
             {
                 <tr>
-                    <td>@contact.FullName</td>                    
+                    <td>@contact.FullName</td>
                     <td>@contact.Company</td>
                     <td>@contact.Title</td>
                     <td><a href="mailto:@contact.Email" class="link-primary">@contact.Email</a></td>

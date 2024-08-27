@@ -17,7 +17,7 @@ namespace ContactWebApp.Pages
             _httpClientFactory = httpClientFactory;
         }
 
-        [BindProperty(SupportsGet = true)]
+        [BindProperty]
         public ContactModel ContactModels { get; set; }
         public async Task OnGet(int id)
         {
